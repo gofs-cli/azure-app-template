@@ -36,9 +36,7 @@ jobs:
         name: Install Golang
         with:
           go-version-file: "go.mod"
-      - run: make templ
-        name: Install Templ
-      - run: templ generate
+      - run: go tool templ generate
         name: Generate templ files
       - uses: actions/upload-artifact@v4
         name: Upload artifact
